@@ -3,6 +3,30 @@ const { auth } = require('../middleware/authMiddleware');
 
 const secureRouter = express.Router();
 
+
+// Secure Route Docs
+
+/**
+ * @swagger
+ * tags:
+ *   name: Secure
+ *   description: Protected routes requiring authentication
+ * /secure/protected:
+ *   get:
+ *     summary: Access protected route
+ *     security:
+ *       - BearerAuth: []
+ *     responses:
+ *       '200':
+ *         description: Access granted to protected route
+ *       '401':
+ *         description: Unauthorized
+ *       '500':
+ *         description: Internal server error
+ */
+
+
+
 // Example protected route
 secureRouter.get('/protected', auth, async (req, res) => {
     try {
@@ -14,7 +38,6 @@ secureRouter.get('/protected', auth, async (req, res) => {
 
 
 module.exports = secureRouter;
-
 
 
 

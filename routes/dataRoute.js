@@ -3,6 +3,35 @@ const axios = require('axios');
 
 const dataRouter = express.Router();
 
+// Data Routes for external api
+
+/**
+ * @swagger
+ * tags:
+ *   name: Data
+ *   description: Operations related to fetching data
+ * /data:
+ *   get:
+ *     summary: Fetch data from public API with filtering options
+ *     parameters:
+ *       - in: query
+ *         name: category
+ *         schema:
+ *           type: string
+ *         description: Category to filter the data
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *         description: Maximum number of data items to return
+ *     responses:
+ *       '200':
+ *         description: Data fetched successfully
+ *       '400':
+ *         description: Bad request or error occurred
+ */
+
+
 // Fetch data from public API with filtering options
 dataRouter.get('/', async (req, res) => {
   try {

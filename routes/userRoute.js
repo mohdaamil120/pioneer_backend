@@ -8,6 +8,67 @@ require("dotenv").config()
 
 const userRouter = express.Router()
 
+// User Authentication routes 
+
+/**
+ * @swagger
+ * tags:
+ *   name: User
+ *   description: Operations related to user management
+ * /users/register:
+ *   post:
+ *     summary: Register a new user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: User registered successfully
+ *       '400':
+ *         description: Bad request or error occurred
+ * /users/login:
+ *   post:
+ *     summary: Log in a user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Login successful
+ *       '400':
+ *         description: Bad request or error occurred
+ * /users/logout:
+ *   get:
+ *     summary: Log out the user
+ *     responses:
+ *       '200':
+ *         description: User logged out successfully
+ *       '400':
+ *         description: Bad request or error occurred
+ */
+
+
+
+
+
 
 // Register route
 
