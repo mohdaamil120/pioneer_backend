@@ -17,17 +17,19 @@ const auth = async (req, res, next) => {
                     // verified
                     next();
                 } else {
-                    res.send({ "msg": "You are not authorized" });
+                    res.status(401).send({ "msg": "You are not authorized" });
                 }
             }
         } else {
-            res.send({ "msg": "You are not authorized, Please Login! First" });
+            res.status(401).send({ "msg": "You are not authorized, Please Login! First" });
         }
     } catch (error) {
-        res.send({ "msg": "Error occurred: " + error.message });
+        res.status(500).send({ "msg": "Error occurred: " + error.message });
     }
 };
 
 module.exports = {
     auth
 }
+
+
