@@ -4,6 +4,7 @@ const { connection } = require("./db")
 const jwt = require("jsonwebtoken")
 const { userRouter } = require("./routes/userRoute")
 const {auth} = require("./middleware/authMiddleware")
+const { dataRouter } = require("./routes/dataRoute")
 
 
 const app = express()
@@ -11,6 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/users", userRouter)
+app.use("/data", dataRouter)
 
 
 app.get("/posts", auth ,(req,res)=>{
