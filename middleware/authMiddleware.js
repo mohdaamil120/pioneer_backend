@@ -4,9 +4,11 @@ require("dotenv").config()
 
 
 const auth = async (req, res, next) => {
+    // get token from headers
     const token = req.headers.authorization?.split(" ")[1];
 
     try {
+        // if token found
         if (token) {
             const blacklistedToken = await BlacklistModel.findOne({ token });
             if (blacklistedToken) {
@@ -20,7 +22,9 @@ const auth = async (req, res, next) => {
                     res.status(401).send({ "msg": "You are not authorized" });
                 }
             }
-        } else {
+        } 
+        // if token not found
+        else {
             res.status(401).send({ "msg": "You are not authorized, Please Login! First" });
         }
     } catch (error) {
