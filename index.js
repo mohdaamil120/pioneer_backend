@@ -21,6 +21,9 @@ const options = {
       servers:[
         {
             url: "http://localhost:4500"
+        },
+        {
+            url: "https://pioneer-backend-9d6u.onrender.com"
         }
       ]
     },
