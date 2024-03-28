@@ -59,29 +59,19 @@ const userRouter = express.Router()
  *   get:
  *     summary: Log out the user
  *     security:
- *       - JWT: []
+ *       - BearerAuth: []   
+ *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         type: string
+ *         required: true
+ *         description: Bearer <token>   // Specify the format for providing the token in the Authorization header
  *     responses:
  *       '200':
  *         description: User logged out successfully
  *       '400':
  *         description: Bad request or error occurred
  */
-
-// * /users/logout:
-//  *   get:
-//  *     summary: Log out the user
-//  *     security:
-//  *   
-//  *     responses:
-//  *       '200':
-//  *         description: User logged out successfully
-//  *       '400':
-//  *         description: Bad request or error occurred
-//  */
-
-
-
-
 
 
 // Register route
