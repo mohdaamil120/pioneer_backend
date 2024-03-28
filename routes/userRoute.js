@@ -58,12 +58,26 @@ const userRouter = express.Router()
  * /users/logout:
  *   get:
  *     summary: Log out the user
+ *     security:
+ *       - JWT: []
  *     responses:
  *       '200':
  *         description: User logged out successfully
  *       '400':
  *         description: Bad request or error occurred
  */
+
+// * /users/logout:
+//  *   get:
+//  *     summary: Log out the user
+//  *     security:
+//  *   
+//  *     responses:
+//  *       '200':
+//  *         description: User logged out successfully
+//  *       '400':
+//  *         description: Bad request or error occurred
+//  */
 
 
 
